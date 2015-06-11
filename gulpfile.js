@@ -25,7 +25,7 @@ gulp.task("init", function () {
 	gulp.src("./node_modules/font-awesome/fonts/*")
 		.pipe(gulp.dest("./jekyll_sources/fonts"));
 });
-gulp.task("build", ["markdown", "ejs", "sass", "jekyll"]);
+gulp.task("build", ["markdown", "ejs", "sass", "image", "jekyll"]);
 gulp.task("test", ["build"], function () {
 	gulp.watch(ejs_watch_files, ["ejs"]);
 	gulp.watch(sass_files, ["sass"]);
