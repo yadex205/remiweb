@@ -11,8 +11,14 @@ var sass_files = "./sass/**/*.scss";
 gulp.task("default");
 gulp.task("build", ["sass"]);
 gulp.task("test", ["build"], function () {
+	exec("bundle exec jekyll serve", function(error, stdout, stderr) {
+		console.log(stdout);
+		console.log(stderr);
+		if (error !== null) {
+			notify.onError("Error: <%= error %>");
+		}
+	});
 	gulp.watch(sass_files, ["sass"]);
-	exec("bundle exec jekyll serve");
 });
 gulp.task("init", function () {
 	exec("bundle install --path vendor/bundle");
