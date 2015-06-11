@@ -3,5 +3,74 @@
 header {
 	font-family: "Questrial";
 	color: #d55;
-	background-color: #ffe0eb;
+	background-color: lightpink;
+	box-sizing: border-box;
+	padding: 0 40px;
+	margin: 60px 0;
+	
+	div.title, ul.menu {
+		width: 100%;
+		max-width: 980px;
+		margin: 0 auto;
+	}
+	
+	div.title {
+		padding: 80px 0 20px 0;
+		img {
+			height: 50px;
+		}
+		span.subtitle {
+			font-size: 24px;
+			margin: 0 20px;
+		}
+	}
+	ul.menu {
+		display: table;
+		width: 100%;
+		table-layout: fixed;
+		border-collapse: collapse;
+		li {
+			position: relative;
+			display: table-cell;
+			background-color: #ffe0e5;
+			background-clip: padding-box;
+			height: 60px;
+			vertical-align: middle;
+			text-align: center;
+			border-color: transparent;
+			border-style: solid;
+			border-width: 0 6px 30px 6px;
+			font-size: 18px;
+			transition: color 0.1s, background-color 0.1s;
+			-webkit-transition: color 0.1s, background-color 0.1s;
+			-o-transition: color 0.1s, background-color 0.1s;
+			-moz-transition: color 0.1s, background-color 0.1s;
+			&:not(.current):hover {
+				color: white;
+				background-color: #d55;
+			}
+			
+			&.current {
+				&:before {
+					content: "";
+					display: block;
+					position: absolute;
+					background-color: #d55;
+					top: 60px; left: 0;
+					width: 100%; height: 60px;
+					transform: skew(-35deg);
+					transform-origin: left bottom;
+					z-index: -1;
+				}
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					background-color: #ffe0e5;
+					top: 60px; left: 0;
+					width: 100%; height: 60px;
+				}
+			}
+		}
+	}
 }
