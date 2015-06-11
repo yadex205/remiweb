@@ -1,6 +1,7 @@
 # compass, css
 .sass-cache/
 stylesheets/
+css/
 *.scssc
 *.css
 

@@ -9,8 +9,8 @@ var gulp = require("gulp"),
 var sass_files = "./sass/**/*.scss";
 
 gulp.task("default");
-gulp.task("build");
-gulp.task("test", function () {
+gulp.task("build", ["sass"]);
+gulp.task("test", ["build"], function () {
 	gulp.watch(sass_files, ["sass"]);
 	exec("bundle exec jekyll serve");
 });
