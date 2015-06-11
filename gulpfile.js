@@ -11,7 +11,7 @@ var sass_files = "./sass/**/*.scss";
 gulp.task("default");
 gulp.task("build", ["sass"]);
 gulp.task("test", ["build"], function () {
-	exec("bundle exec jekyll serve", function(error, stdout, stderr) {
+	exec("bundle exec jekyll --server 8080 --auto", function(error, stdout, stderr) {
 		console.log(stdout);
 		console.log(stderr);
 		if (error !== null) {
