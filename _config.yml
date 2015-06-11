@@ -1,2 +1,4 @@
 markdown: redcarpet
 exclude: ["vendor", "Gemfile", "Gemfile.lock", "README.md"]
+source: "jekyll_sources"
+destination: "htdocs"
