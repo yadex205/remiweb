@@ -1,2 +1,2 @@
 markdown: redcarpet
-exclude: ["vendor", "Gemfile", "Gemfile.lock", "README.md", "sass", "gulpfile.js", "package.json", "config.rb"]
+exclude: ["vendor", "Gemfile", "Gemfile.lock", "README.md", "sass", "gulpfile.js", "package.json", "config.rb", "ejs"]

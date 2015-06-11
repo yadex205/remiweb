@@ -10,6 +10,9 @@
 		"gulp": "3.8.11",
 		"gulp-compass": "latest",
 		"gulp-plumber": "latest",
-		"gulp-notify": "latest"
+		"gulp-notify": "latest",
+		"gulp-ejs": "latest",
+		"gulp-exec": "latest",
+		"gulp-server-livereload": "latest"
 	}
 }
