@@ -1,2 +1,2 @@
 markdown: redcarpet
-exclude: ["vendor", "Gemfile", "Gemfile.lock"]
+exclude: ["vendor", "Gemfile", "Gemfile.lock", "README.md"]

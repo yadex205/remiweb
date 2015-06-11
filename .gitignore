@@ -1,5 +1,16 @@
+# compass, css
 .sass-cache/
+stylesheets/
 *.scssc
 *.css
+
+# html
 *.html
+
+# ruby bundle
 .bundle/
+vendor/
+Gemfile.lock
+
+# jekyll
+jekyll_sorces/

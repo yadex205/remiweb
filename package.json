@@ -1,0 +1,9 @@
+{
+	"name": "re-mi-web",
+	"version": "0.0.1",
+	"license": "MIT",
+	"private": true,
+	"devDependencies": {
+		"gulp": "3.8.11"
+	}
+}
