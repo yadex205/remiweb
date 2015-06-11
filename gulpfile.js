@@ -17,7 +17,9 @@ var ejs_compile_files = ["./ejs/**/*.ejs", '!' + "./ejs/**/_*.ejs"],
 
 gulp.task("default", ["build"]);
 gulp.task("init", function () {
-	exec("bundle install --path vendor/bundle");
+	gulp.src(".")
+		.pipe(exec("bundle install --path vendor/bundle"))
+		.pipe(exec.reporter());
 	gulp.src("./node_modules/font-awesome/css/font-awesome.min.css")
 		.pipe(gulp.dest("./jekyll_sources/css"));
 	gulp.src("./node_modules/font-awesome/fonts/*")
