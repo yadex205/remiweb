@@ -1,0 +1,2 @@
+markdown: redcarpet
+exclude: ["vendor", "Gemfile", "Gemfile.lock"]
