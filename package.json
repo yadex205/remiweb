@@ -6,6 +6,9 @@
 	"scripts": {
 		"postinstall": "gulp init"
 	},
+	"dependencies": {
+		"font-awesome": "4.3.0"
+	},
 	"devDependencies": {
 		"gulp": "3.8.11",
 		"gulp-compass": "latest",

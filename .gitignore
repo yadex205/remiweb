@@ -14,7 +14,7 @@ vendor/
 Gemfile.lock
 
 # jekyll
-jekyll_sorces/
+jekyll_sources/
 
 # nodejs
 node_modules/

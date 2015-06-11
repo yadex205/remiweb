@@ -11,11 +11,17 @@ var gulp = require("gulp"),
 var ejs_compile_files = ["./ejs/**/*.ejs", '!' + "./ejs/**/_*.ejs"],
 	ejs_watch_files = "./ejs/**/*.ejs",
 	sass_files = "./sass/**/*.scss",
-	jekyll_source_files = "./jekyll_sources/**/*";
+	jekyll_source_files = "./jekyll_sources/**/*",
+	markdown_files = "./markdown/**/*.md",
+	image_files = "./image/**/*.{png,jpg,svg}";
 
 gulp.task("default", ["build"]);
 gulp.task("init", function () {
 	exec("bundle install --path vendor/bundle");
+	gulp.src("./node_modules/font-awesome/css/font-awesome.min.css")
+		.pipe(gulp.dest("./jekyll_sources/css"));
+	gulp.src("./node_modules/font-awesome/fonts/*")
+		.pipe(gulp.dest("./jekyll_sources/fonts"));
 });
 gulp.task("build", ["ejs", "sass", "jekyll"]);
 gulp.task("test", ["build"], function () {
@@ -34,6 +40,14 @@ gulp.task("jekyll", function () {
 	gulp.src(".")
 		.pipe(exec("bundle exec jekyll build"))
 		.pipe(exec.reporter());
+});
+gulp.task("markdown", function () {
+	gulp.src(markdown_files)
+		.pipe(gulp.dest("./jekyll_sources"));
+});
+gulp.task("image", function () {
+	gulp.src(image_files)
+		.pipe(gulp.dest("./jekyll_sources/image"));
 });
 gulp.task("ejs", function () {
 	gulp.src(ejs_compile_files)
