@@ -14,6 +14,9 @@ gulp.task("test", function () {
 	gulp.watch(sass_files, ["sass"]);
 	exec("bundle exec jekyll serve");
 });
+gulp.task("init", function () {
+	exec("bundle install --path vendor/bundle");
+});
 
 gulp.task("sass", function () {
 	gulp.src(sass_files)

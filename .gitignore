@@ -14,3 +14,7 @@ Gemfile.lock
 
 # jekyll
 jekyll_sorces/
+
+# nodejs
+node_modules/
+*.log

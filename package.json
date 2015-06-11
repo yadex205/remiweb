@@ -3,6 +3,9 @@
 	"version": "0.0.1",
 	"license": "MIT",
 	"private": true,
+	"scripts": {
+		"postinstall": "gulp init"
+	},
 	"devDependencies": {
 		"gulp": "3.8.11",
 		"gulp-compass": "latest",
