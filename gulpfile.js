@@ -10,7 +10,8 @@ var gulp = require("gulp"),
 // Filepath
 var ejs_compile_files = ["./ejs/**/*.ejs", '!' + "./ejs/**/_*.ejs"],
 	ejs_watch_files = "./ejs/**/*.ejs",
-	sass_files = "./sass/**/*.scss";
+	sass_files = "./sass/**/*.scss",
+	jekyll_source_files = "./jekyll_sources/*";
 
 gulp.task("default", ["build"]);
 gulp.task("init", function () {
@@ -20,6 +21,11 @@ gulp.task("build", ["ejs", "sass"]);
 gulp.task("test", ["build"], function () {
 	gulp.watch(ejs_watch_files, ["ejs"]);
 	gulp.watch(sass_files, ["sass"]);
+	gulp.watch(jekyll_source_files, function () {
+		gulp.src(".")
+		.pipe(exec("bundle exec jekyll build"))
+		.pipe(exec.reporter());
+	});
 	gulp.src("./_site")
 		.pipe(server({
 			livereload: true,
@@ -32,7 +38,7 @@ gulp.task("test", ["build"], function () {
 gulp.task("ejs", function () {
 	gulp.src(ejs_compile_files)
 		.pipe(ejs())
-		.pipe(gulp.dest("./_layouts"));
+		.pipe(gulp.dest("./jekyll_sources/_layouts"));
 });
 gulp.task("sass", function () {
 	gulp.src(sass_files)
@@ -42,8 +48,6 @@ gulp.task("sass", function () {
 		.pipe(compass({
 			config_file: "config.rb",
 			sass: "sass",
-			css: "css"
-		}))
-		.pipe(exec("bundle exec jekyll build"))
-		.pipe(exec.reporter());
+			css: "jekyll_sources/css"
+		}));
 });
