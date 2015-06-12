@@ -27,11 +27,11 @@ section.main-content {
 			bottom: 0; right: 0; 
 			height: 100px; width: 300px;
 			background-color: #ffe0eb;
-			padding: 12px;
+			padding: 18px;
 			box-sizing: border-box;
 			border-style: solid;
 			border-color: white;
-			border-width: 12px 0 0 12px;
+			border-width: 18px 0 0 18px;
 			
 			div.date {
 				font-family: "Questrial";
@@ -51,12 +51,32 @@ section.main-content {
 		width: 100%;
 		max-width: 980px;
 		margin: 20px auto;
-		border-spacing: 20px;
+		border-spacing: 12px;
 		
 		section {
 			display: table-cell;
 			box-sizing: border-box;
 			vertical-align: top;
+			
+			header {
+				font-family: "Questrial";
+				color: #d55;
+				font-size: 20px;
+				line-height: 40px;
+				border-bottom: 2px solid #d55;
+				margin-bottom: 12px;
+			}
+			div.post-thumb {
+				border-left: 8px solid #d55;
+				padding: 12px;
+				box-sizing: border-box;
+				div.date {
+					font-family: "Questrial";
+					color: #d55;
+					font-size: 18px;
+					margin-bottom: 6px;
+				}
+			}
 		}
 	}
 }
