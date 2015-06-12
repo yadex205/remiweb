@@ -6,7 +6,7 @@ header {
 	background-color: lightpink;
 	box-sizing: border-box;
 	padding: 0 40px;
-	margin: 60px 0;
+	margin-bottom: 36px;
 	
 	div.title, ul.menu {
 		width: 100%;
@@ -15,7 +15,7 @@ header {
 	}
 	
 	div.title {
-		padding: 80px 0 20px 0;
+		padding: 60px 0 20px 0;
 		img {
 			height: 50px;
 		}
@@ -28,7 +28,7 @@ header {
 		display: table;
 		width: 100%;
 		table-layout: fixed;
-		padding-bottom: 30px;
+		padding-bottom: 20px;
 		border-spacing: 6px 0;
 		li {
 			position: relative;
@@ -58,7 +58,7 @@ header {
 					position: absolute;
 					background-color: #d55;
 					top: 60px; left: 0;
-					width: 100%; height: 60px;
+					width: 100%; height: 40px;
 					transform: skew(-35deg);
 					transform-origin: left bottom;
 					z-index: -1;
@@ -69,7 +69,7 @@ header {
 					position: absolute;
 					background-color: #ffe0e5;
 					top: 60px; left: 0;
-					width: 100%; height: 60px;
+					width: 100%; height: 40px;
 				}
 			}
 		}

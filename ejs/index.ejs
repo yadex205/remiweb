@@ -2,13 +2,53 @@
 <html>
 <head>
 	<% include common/_meta %>
-	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/pages/index.css">
 </head>
 <body>
 	<% include common/_header %>
 	<section class="main-content">
+		<div class="top-picture"
+			style="
+				background-image: url('image/index-large/00.jpg');
+				background-size: cover;
+				background-position: 35%;
+			">
+			<div class="extra-link">
+				
+			</div>
+			<div class="update-info-picture"
+				style="
+					background-image: url('image/id.jpg');
+				">
+			</div>
+			<div class="update-info-text">
+				<div class="date">
+					2015.06.12 fri
+				</div>
+				<div class="text">
+					Webサイトを開設しました!
+				</div>
+			</div>
+		</div>
 		
-		{{ content }}
+		<div class="bottom-contents">
+			<section class="news">
+				News
+				{% for post in site.posts %}
+				{% for tag in post.tags %}
+				{% if tag == "news" %}
+				{{ post.title }}
+				{% endif %}
+				{% endfor %}
+				{% endfor %}
+			</section>
+			<section class="live">
+				Live
+			</section>
+			<section class="twitter">
+				<a class=twitter-timeline href=https://twitter.com/remiriya27 data-widget-id=607049707467120641 data-link-color=#d55 data-chrome=nofooter data-border-color=#ffc6d1 data-tweet-limit=3>Tweets from @remiriya27</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</section>
+		</div>
 	</section>
 	<% include common/_footer %>
 </body>
