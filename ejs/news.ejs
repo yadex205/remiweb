@@ -7,6 +7,23 @@
 <body>
 	<% include common/_header %>
 	<section class="main-content">
+		{% for post in site.posts %}
+		{% if post.tags contains "news" %}
+			<article class="post">
+				<div class="date">
+					{{ post.date | date: '%Y.%m.%d'}}
+				</div>
+				<div class="text">
+					<div class="title">
+						{{ post.title }}
+					</div>
+					<div class="content">
+						{{ post.content }}
+					</div>
+				</div>
+			</article>
+		{% endif %}
+		{% endfor %}
 	</section>
 	<% include common/_footer %>
 </body>

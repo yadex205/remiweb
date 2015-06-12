@@ -1,5 +1,30 @@
 // pages/news.scss
 
 section.main-content {
-	
+	width: 100%;
+	max-width: 980px;
+	margin: 0 auto;
+	article.post {
+		padding: 24px;
+		box-sizing: border-box;
+		
+		div.date {
+			display: inline-block;
+			vertical-align: top;
+			font-family: "Questrial";
+			color: #d55;
+			font-size: 24px;
+			width: 140px;
+		}
+		div.text {
+			display: inline-block;
+			border-left: 2px solid #d55;
+			padding: 0 12px;
+			
+			div.title {
+				font-weight: bolder;
+				line-height: 32px;
+			}
+		}
+	}
 }
