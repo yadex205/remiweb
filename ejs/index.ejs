@@ -22,12 +22,16 @@
 				">
 			</div>
 			<div class="update-info-text">
+				{% for post in site.posts limit:1 %}
+				{% if post.tags contains "news" %}
 				<div class="date">
-					2015.06.12 fri
+					{{ post.date | date: '%Y.%m.%d' }}
 				</div>
 				<div class="text">
-					Webサイトを開設しました!
+					{{ post.title }}
 				</div>
+				{% endif %}
+				{% endfor %}
 			</div>
 		</div>
 		

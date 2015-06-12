@@ -24,23 +24,24 @@ header.main-header {
 			margin: 0 20px;
 		}
 	}
-	ul.menu {
+	div.menu {
 		display: table;
 		width: 100%;
+		max-width: 980px;
+		margin: 0 auto;	
 		table-layout: fixed;
 		padding-bottom: 20px;
 		border-spacing: 6px 0;
-		li {
+		a {
 			position: relative;
 			display: table-cell;
+			color: #d55;
 			background-color: #ffe0e5;
 			background-clip: padding-box;
+			text-decoration: none;
 			height: 60px;
 			vertical-align: middle;
 			text-align: center;
-			// border-color: transparent;
-			// border-style: solid;
-			// border-width: 0 3px;
 			font-size: 18px;
 			transition: color 0.1s, background-color 0.1s;
 			-webkit-transition: color 0.1s, background-color 0.1s;
