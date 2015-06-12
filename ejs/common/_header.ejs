@@ -4,14 +4,37 @@
 		<span class="subtitle">official website</span>
 	</div>
 	<div class="menu">
-		<a href="/" class="current">top</a>
-		<a href="news.html">news</a>
-		<a href="#">live</a>
-		<a href="#">disco<br />graphy</a>
-		<a href="#">profile</a>
+		<a href="/"
+			{% if page.name contains "index" %}
+			class="current"
+			{% endif %}
+			>top</a>
+		<a href="news.html"
+			{% if page.name contains "news" %}
+			class="current"
+			{% endif %}
+			>news</a>
+		<a href="#"
+			{% if page.name contains "live" %}
+			class="current"
+			{% endif %}
+			>live</a>
+		<a href="#"
+			{% if page.name contains "discography" %}
+			class="current"
+			{% endif %}
+			>disco<br />graphy</a>
+		<a href="#"
+			{% if page.name contains "profile" %}
+			class="current"
+			{% endif %}
+			>profile</a>
 		<a href="http://iiriyaa.blog23.fc2.com/"
 			target="_blank">blog</a>
-		<a href="#">contact</a>
+		<a href="#"
+			{% if page.name contains "contact" %}
+			class="current"
+			{% endif %}
+			>contact</a>
 	</div>
 </header>
-{{ site }}

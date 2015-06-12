@@ -40,6 +40,9 @@ gulp.task("test", ["build"], function () {
 
 gulp.task("jekyll", function () {
 	gulp.src(".")
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
 		.pipe(exec("bundle exec jekyll build"))
 		.pipe(exec.reporter());
 });
