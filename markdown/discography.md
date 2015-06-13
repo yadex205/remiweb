@@ -1,4 +1,5 @@
 ---
-layout: discography
+layout: default
 title: Discography
+displaytitle: discography
 ---

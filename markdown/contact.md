@@ -1,4 +1,5 @@
 ---
-layout: contact
+layout: default
 title: Contact
+displaytitle: contact
 ---

@@ -1,4 +1,5 @@
 ---
-layout: profile
+layout: default
 title: Profile
+displaytitle: profile
 ---
