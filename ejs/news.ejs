@@ -8,15 +8,18 @@
 <body>
 	<% include common/_header %>
 	<section class="main-content">
+		<div>
+			<a href="{{ base }}/">top</a> <i class="fa fa-caret-right fa-lg"></i> news
+		</div>
 		{% for post in site.posts %}
-		{% if post.tags contains "news" %}
+		{% if post.category == "news" %}
 			<article class="post">
 				<div class="date">
 					{{ post.date | date: '%Y.%m.%d'}}
 				</div>
 				<div class="text">
 					<div class="title">
-						<a href="{{ base}}{{ post.url }}">{{ post.title }}</a>
+						<a href="{{ base }}{{ post.url }}">{{ post.title }}</a>
 					</div>
 					<div class="content">
 						{{ post.content }}

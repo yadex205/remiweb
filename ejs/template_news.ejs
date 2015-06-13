@@ -2,12 +2,35 @@
 <html>
 <head>
 	<% include common/_meta %>
-	<title>れーみ&#x2606;{{ page.title }}</title>
+	<title>れーみ&#x2606; - {{ page.title }}</title>
+	<link rel="stylesheet" href="{{ base }}/css/pages/news.css">
 </head>
 <body>
 	<% include common/_header %>
 	<section class="main-content">
-		{{ content }}
+		<div>
+			<a href="{{ base }}/">top</a> <i class="fa fa-caret-right fa-lg"></i>
+			<a href="{{ base }}/news/">news</a> <i class="fa fa-caret-right fa-lg"></i>
+			{{ page.title }}
+		</div>
+		<article class="post">
+			<div class="date">
+				{{ page.date | date: '%Y.%m.%d' }}
+			</div>
+			<div class="text">
+				<div class="title">
+					{{ page.title }}
+				</div>
+				<div class="content">
+					{{ content }}
+				</div>
+				<div class="share-post">
+					<a href="https://twitter.com/share" class="twitter-share-button"
+						data-text="{{ page.title }} - れーみ&#x2606; official website"
+						></a>
+				</div>
+			</div>
+		</article>
 	</section>
 	<% include common/_footer %>
 </body>

@@ -24,7 +24,7 @@
 			</div>
 			<div class="update-info-text">
 				{% for post in site.posts limit:1 %}
-				{% if post.tags contains "news" %}
+				{% if post.category == "news" %}
 				<div class="date">
 					{{ post.date | date: '%Y.%m.%d' }}
 				</div>
@@ -39,13 +39,14 @@
 			<section class="news">
 				<header>News</header>
 				{% for post in site.posts limit:3 %}
-				{% if post.tags contains "news" %}
+				{% if post.category == "news" %}
 				<div class="post-thumb">
 					<div class="date">
 						{{ post.date | date: '%Y.%m.%d' }}
 					</div>
 					<div class="title">
-						{{ post.title }}
+						<a href="{{ base }}{{ post.url }}">{{ post.title }}
+							<i class="fa fa-arrow-circle-right fa-lg"></i></a>
 					</div>
 				</div>
 				{% endif %}
@@ -54,7 +55,7 @@
 			<section class="live">
 				<header>Live</header>
 				{% for post in site.posts limit:3 %}
-				{% if post.tags contains "live" %}
+				{% if post.category == "live" %}
 				<div class="post-thumb">
 					<div class="date">
 						{{ post.date | date: '%Y.%m.%d' }}
@@ -67,7 +68,7 @@
 				{% endfor %}
 			</section>
 			<section class="twitter">
-				<a class=twitter-timeline href=https://twitter.com/remiriya27 data-widget-id=607049707467120641 data-link-color=#d55 data-chrome=nofooter data-border-color=#ffc6d1 data-tweet-limit=3>Tweets from @remiriya27</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				<a class=twitter-timeline href=https://twitter.com/remiriya27 data-widget-id=607049707467120641 data-link-color=#d55 data-chrome=nofooter data-border-color=#ffc6d1 data-tweet-limit=3>Tweets from @remiriya27</a>
 			</section>
 		</div>
 	</section>
