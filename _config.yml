@@ -2,3 +2,5 @@ markdown: redcarpet
 exclude: ["vendor", "Gemfile", "Gemfile.lock", "README.md", "sass", "gulpfile.js", "package.json", "config.rb", "ejs", "node_modules"]
 source: "jekyll_sources"
 destination: "htdocs"
+
+permalink: pretty

@@ -14,7 +14,8 @@ var ejs_compile_files = ["./ejs/**/*.ejs", '!' + "./ejs/**/_*.ejs"],
 	sass_files = "./sass/**/*.scss",
 	jekyll_source_files = "./jekyll_sources/**/*",
 	markdown_files = "./markdown/**/*.md",
-	image_files = "./image/**/*.{png,jpg,svg}";
+	image_files = "./image/**/*.{png,jpg,svg}",
+	js_files = "./script/**/*.js";
 
 var exec_callback = function (err, stdout, stderr) {
 	console.log(stdout);
@@ -32,6 +33,8 @@ gulp.task("init", function () {
 		.pipe(gulp.dest("./jekyll_sources/css"));
 	gulp.src("./node_modules/font-awesome/fonts/*")
 		.pipe(gulp.dest("./jekyll_sources/fonts"));
+	gulp.src("./node_modules/smooth-scroll/dist/js/smooth-scroll.min.js")
+		.pipe(gulp.dest("./jekyll_sources/js"));
 });
 gulp.task("build", function () {
 	runSequence("generate_sources", "jekyll");
@@ -44,6 +47,7 @@ gulp.task("test", function () {
 		gulp.watch(sass_files, ["sass"]);
 		gulp.watch(markdown_files, ["markdown"]);
 		gulp.watch(image_files, ["image"]);
+		gulp.watch(js_files, ["script"]);
 		gulp.src("./htdocs")
 			.pipe(server({
 			livereload: true,
@@ -58,7 +62,7 @@ gulp.task("jekyll", function () {
 });
 
 
-gulp.task("generate_sources", ["ejs", "markdown", "sass", "image"]);
+gulp.task("generate_sources", ["ejs", "markdown", "sass", "image", "script"]);
 gulp.task("markdown", function () {
 	gulp.src(markdown_files)
 		.pipe(gulp.dest("./jekyll_sources"));
@@ -71,6 +75,10 @@ gulp.task("ejs", function () {
 	gulp.src(ejs_compile_files)
 		.pipe(ejs())
 		.pipe(gulp.dest("./jekyll_sources/_layouts"));
+});
+gulp.task("script", function () {
+	gulp.src(js_files)
+		.pipe(gulp.dest("./jekyll_sources/js"));
 });
 gulp.task("sass", function () {
 	gulp.src(sass_files)

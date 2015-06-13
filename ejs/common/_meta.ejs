@@ -1,6 +1,15 @@
+{% assign base = '' %}
+{% assign depth = page.url | split: '/' | size %}
+{% if    depth == 1 %}{% assign base = '.' %}
+{% elsif depth == 2 %}{% assign base = '..' %}
+{% elsif depth == 3 %}{% assign base = '../..' %}
+{% elsif depth == 4 %}{% assign base = '../../..' %}{% endif %}
+
 <meta charset="UTF-8">
 <meta name="generator" content="Microsoft Visual Studio Code">
 <meta name="author" content="Yadex205 <yadex205@outlook.jp>">
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ base }}/css/base.css">
+<link rel="stylesheet" href="{{ base }}/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+<script src="{{ base }}/js/smooth-scroll.min.js"></script>
+<script src="{{ base }}/js/app.js"></script>

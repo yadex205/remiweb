@@ -1,6 +1,6 @@
-<header class="main-header">
+<header id="top" class="main-header">
 	<div class="title">
-		<img src="image/id_logo.svg" alt="logo">
+		<img src="{{ base }}/image/id_logo.svg" alt="logo">
 		<span class="subtitle">official website</span>
 	</div>
 	<div class="menu">
@@ -9,7 +9,7 @@
 			class="current"
 			{% endif %}
 			>top</a>
-		<a href="news.html"
+		<a href="news/"
 			{% if page.name contains "news" %}
 			class="current"
 			{% endif %}
