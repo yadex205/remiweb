@@ -15,14 +15,15 @@ var ejs_compile_files = ["./ejs/**/*.ejs", '!' + "./ejs/**/_*.ejs"],
 	jekyll_source_files = "./jekyll_sources/**/*",
 	markdown_files = "./markdown/**/*.md",
 	image_files = "./image/**/*.{png,jpg,svg}",
-	js_files = "./script/**/*.js";
+	js_files = "./script/**/*.js",
+	plugin_files = "./plugin/*.rb";
 
 var exec_callback = function (err, stdout, stderr) {
 	console.log(stdout);
 	console.log(stderr);
 
 	if (err) {
-		notify.onError("<%= err %>");
+		notify.onError("Error! <%= err %>");
 	}
 }
 
@@ -48,6 +49,7 @@ gulp.task("test", function () {
 		gulp.watch(markdown_files, ["markdown"]);
 		gulp.watch(image_files, ["image"]);
 		gulp.watch(js_files, ["script"]);
+		gulp.watch(plugin_files, ["plugin"]);
 		gulp.src("./htdocs")
 			.pipe(server({
 			livereload: true,
@@ -62,7 +64,11 @@ gulp.task("jekyll", function () {
 });
 
 
-gulp.task("generate_sources", ["ejs", "markdown", "sass", "image", "script"]);
+gulp.task("generate_sources", ["ejs", "markdown", "sass", "image", "script", "plugin"]);
+gulp.task("plugin", function () {
+	gulp.src(plugin_files)
+		.pipe(gulp.dest("./jekyll_sources/_plugins"));
+});
 gulp.task("markdown", function () {
 	gulp.src(markdown_files)
 		.pipe(gulp.dest("./jekyll_sources"));
@@ -73,6 +79,9 @@ gulp.task("image", function () {
 });
 gulp.task("ejs", function () {
 	gulp.src(ejs_compile_files)
+		.pipe(plumber({
+			errorHandler: notify.onError("Error: <%= error.message %>")
+		}))
 		.pipe(ejs())
 		.pipe(gulp.dest("./jekyll_sources/_layouts"));
 });

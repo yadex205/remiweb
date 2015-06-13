@@ -35,7 +35,7 @@ extracss: /css/pages/index.css
 				{{ post.date | date: '%Y.%m.%d' }}
 			</div>
 			<div class="title">
-				<a href="{{ base }}{{ post.url }}">{{ post.title }}
+				<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}
 					<i class="fa fa-arrow-circle-right fa-lg"></i></a>
 			</div>
 		</div>
@@ -50,7 +50,7 @@ extracss: /css/pages/index.css
 				{{ post.date | date: '%Y.%m.%d' }}
 			</div>
 			<div class="title">
-				<a href="{{ base }}{{ post.url }}">{{ post.title }}
+				<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}
 					<i class="fa fa-arrow-circle-right fa-lg"></i></a>
 			</div>
 		</div>

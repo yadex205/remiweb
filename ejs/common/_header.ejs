@@ -1,38 +1,38 @@
 <div id="fb-root"></div>
 <header id="top" class="main-header">
 	<div class="title">
-		<img src="{{ base }}/image/id_logo.svg" alt="logo">
+		<img src="{{ page.url | ptr }}/image/id_logo.svg" alt="logo">
 		<span class="subtitle">official website</span>
 	</div>
 	<div class="menu">
-		<a href="{{ base }}/"
+		<a href="{{ page.url | ptr }}/"
 			{% if page.name contains "index" %}
 			class="current"
 			{% endif %}
 			>top</a>
-		<a href="{{ base }}/news/"
+		<a href="{{ page.url | ptr }}/news/"
 			{% if page.name contains "news" %}
 			class="current"
 			{% endif %}
 			>news</a>
-		<a href="{{ base }}/live"
+		<a href="{{ page.url | ptr }}/live"
 			{% if page.name contains "live" %}
 			class="current"
 			{% endif %}
 			>live</a>
-		<a href="{{ base }}/discography"
+		<a href="{{ page.url | ptr }}/discography"
 			{% if page.name contains "discography" %}
 			class="current"
 			{% endif %}
 			>disco<br />graphy</a>
-		<a href="{{ base }}/biography"
+		<a href="{{ page.url | ptr }}/biography"
 			{% if page.name contains "biography" %}
 			class="current"
 			{% endif %}
 			>biography</a>
 		<a href="http://iiriyaa.blog23.fc2.com/"
 			target="_blank">blog</a>
-		<a href="{{ base }}/contact"
+		<a href="{{ page.url | ptr }}/contact"
 			{% if page.name contains "contact" %}
 			class="current"
 			{% endif %}

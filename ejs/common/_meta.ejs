@@ -1,26 +1,17 @@
-{% assign base = '' %}
-{% assign depth = page.url | append:'foo' | split: '/' | size | minus:1 %}
-{% if    depth == 1 %}{% assign base = '.' %}
-{% elsif depth == 2 %}{% assign base = '..' %}
-{% elsif depth == 3 %}{% assign base = '../..' %}
-{% elsif depth == 4 %}{% assign base = '../../..' %}
-{% elsif depth == 5 %}{% assign base = '../../../..' %}
-{% elsif depth == 6 %}{% assign base = '../../../../..' %}
-{% endif %}
-
 <meta charset="UTF-8">
 <meta name="generator" content="Microsoft Visual Studio Code">
 <meta name="author" content="Yadex205 <yadex205@outlook.jp>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="{{ base }}/css/base.css">
-<link rel="stylesheet" href="{{ base }}/css/font-awesome.min.css">
+<META NAME="ROBOTS" CONTENT="NOINDEX,NOFOLLOW,NOARCHIVE"> 
+<link rel="stylesheet" href="{{ page.url | ptr }}/css/base.css">
+<link rel="stylesheet" href="{{ page.url | ptr }}/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 {% if page.extracss != null %}
-<link rel="stylesheet" href="{{ base }}{{page.extracss}}">
+<link rel="stylesheet" href="{{ page.url | ptr }}{{page.extracss}}">
 {% endif %}
 
-<script src="{{ base }}/js/smooth-scroll.min.js"></script>
-<script src="{{ base }}/js/app.js"></script>
+<script src="{{ page.url | ptr }}/js/smooth-scroll.min.js"></script>
+<script src="{{ page.url | ptr }}/js/app.js"></script>
 <script>
 window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
