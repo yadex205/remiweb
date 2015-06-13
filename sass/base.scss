@@ -15,7 +15,7 @@ p {
 	margin: 12px 0;
 }
 
-section.main-content {
+section.main-content-outer {
 	width: 100%;
 	max-width: 980px;
 	margin: 0 auto;
@@ -24,6 +24,10 @@ section.main-content {
 		font-family: "Questrial";
 		font-size: 48px;
 		color: #d55;
-		padding: 0 24px;
+		padding: 12px 24px;
+	}
+	section.main-content {
+		margin: 24px;
+		box-sizing: border-box;
 	}
 }

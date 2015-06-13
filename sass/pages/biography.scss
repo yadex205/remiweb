@@ -1,0 +1,15 @@
+// pages/biography.scss
+
+section.main-content {
+	dl.property {
+		line-height: 20px;
+		margin: 20px 0;
+		dt {
+			float: left;
+			font-weight: bolder;
+		}
+		dd {
+			margin-left: 5em;
+		}
+	}
+}

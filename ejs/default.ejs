@@ -5,9 +5,11 @@
 </head>
 <body>
 	<% include common/_header %>
-	<section class="main-content">
+	<section class="main-content-outer">
 		<header class="page-title">{{ page.displaytitle }}</header>
-		{{ content }}
+		<section class="main-content">
+			{{ content }}
+		</section>
 	</section>
 	<% include common/_footer %>
 </body>

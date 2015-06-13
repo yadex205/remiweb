@@ -6,27 +6,29 @@
 </head>
 <body>
 	<% include common/_header %>
-	<section class="main-content">
+	<section class="main-content-outer">
 		<header class="page-title">live</header>
-		<article class="post">
-			<div class="date">
-				{{ page.date | date: '%Y.%m.%d' }}
-			</div>
-			<div class="text">
-				<div class="title">
-					{{ page.title }}
+		<section class="main-content">
+			<article class="post">
+				<div class="date">
+					{{ page.date | date: '%Y.%m.%d' }}
 				</div>
-				<div class="content">
-					{{ content }}
+				<div class="text">
+					<div class="title">
+						{{ page.title }}
+					</div>
+					<div class="content">
+						{{ content }}
+					</div>
+					<div class="share-post">
+						<a href="https://twitter.com/share" class="twitter-share-button"
+							data-text="{{ page.title }} - れーみ&#x2606; official website"
+							></a>
+						<div class="fb-share-button" data-layout="button_count"></div>
+					</div>
 				</div>
-				<div class="share-post">
-					<a href="https://twitter.com/share" class="twitter-share-button"
-						data-text="{{ page.title }} - れーみ&#x2606; official website"
-						></a>
-					<div class="fb-share-button" data-layout="button_count"></div>
-				</div>
-			</div>
-		</article>
+			</article>
+		</section>
 	</section>
 	<% include common/_footer %>
 </body>
