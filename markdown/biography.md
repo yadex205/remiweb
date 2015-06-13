@@ -9,3 +9,9 @@ extracss: /css/pages/biography.css
 	<dt>blood</dt><dd>x型</dd>
 	<dt>location</dt><dd>東京</dd>
 </dl>
+
+## profile
+プロフィール文
+
+## history
+なにか
