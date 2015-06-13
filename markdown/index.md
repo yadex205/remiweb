@@ -43,7 +43,8 @@ extracss: /css/pages/index.css
 	</section>
 	<section class="live">
 		<header>Live schedule</header>
-		{% for post in site.categories.live limit:3 %}
+		{% assign start = site.categories.live | size | minus:3 %}
+		{% for post in site.categories.live reversed offset:start %}
 		<div class="post-thumb">
 			<div class="date">
 				{{ post.date | date: '%Y.%m.%d' }}

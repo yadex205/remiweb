@@ -5,7 +5,7 @@ displaytitle: live schedule
 extracss: /css/pages/news.css
 ---
 <ul class="live-category"></ul>
-{% for post in site.categories.live %}
+{% for post in site.categories.live reversed %}
 <article class="post">
 	<div class="date">
 		{{ post.date | date: '%Y.%m.%d' }}
