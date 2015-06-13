@@ -1,3 +1,4 @@
 ---
 layout: live
+title: Live
 ---

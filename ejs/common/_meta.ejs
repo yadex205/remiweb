@@ -32,3 +32,8 @@
  
   return t;
 }(document, "script", "twitter-wjs"));</script>
+{% if page.title == null %}
+<title>れーみ&#x2606; official website</title>
+{% else %}
+<title>れーみ&#x2606; - {{ page.title }}</title>
+{% endif %}

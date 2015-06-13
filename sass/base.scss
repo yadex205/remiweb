@@ -14,3 +14,16 @@ body {
 p {
 	margin: 12px 0;
 }
+
+section.main-content {
+	width: 100%;
+	max-width: 980px;
+	margin: 0 auto;
+	
+	header.page-title {
+		font-family: "Questrial";
+		font-size: 48px;
+		color: #d55;
+		padding: 0 24px;
+	}
+}

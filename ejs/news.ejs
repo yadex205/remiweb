@@ -3,14 +3,11 @@
 <head>
 	<% include common/_meta %>
 	<link rel="stylesheet" href="{{ base }}/css/pages/news.css">
-	<title>れーみ&#x2606; - News</title>
 </head>
 <body>
 	<% include common/_header %>
 	<section class="main-content">
-		<div>
-			<a href="{{ base }}/">top</a> <i class="fa fa-caret-right fa-lg"></i> news
-		</div>
+		<header class="page-title">news</header>
 		{% for post in site.posts %}
 		{% if post.category == "news" %}
 			<article class="post">

@@ -8,11 +8,7 @@
 <body>
 	<% include common/_header %>
 	<section class="main-content">
-		<div>
-			<a href="{{ base }}/">top</a> <i class="fa fa-caret-right fa-lg"></i>
-			<a href="{{ base }}/news/">news</a> <i class="fa fa-caret-right fa-lg"></i>
-			{{ page.title }}
-		</div>
+		<header class="page-title">news</header>
 		<article class="post">
 			<div class="date">
 				{{ page.date | date: '%Y.%m.%d' }}
