@@ -4,12 +4,12 @@
 		<span class="subtitle">official website</span>
 	</div>
 	<div class="menu">
-		<a href="/"
+		<a href="{{ base }}/"
 			{% if page.name contains "index" %}
 			class="current"
 			{% endif %}
 			>top</a>
-		<a href="news/"
+		<a href="{{ base }}/news/"
 			{% if page.name contains "news" %}
 			class="current"
 			{% endif %}
