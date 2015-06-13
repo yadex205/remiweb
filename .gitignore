@@ -15,7 +15,7 @@ Gemfile.lock
 
 # jekyll
 jekyll_sources/
-_site/
+htdocs/
 
 # nodejs
 node_modules/

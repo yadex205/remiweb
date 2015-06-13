@@ -16,6 +16,7 @@
 		"gulp-notify": "latest",
 		"gulp-ejs": "latest",
 		"gulp-exec": "latest",
+		"run-sequence": "1.1.0",
 		"gulp-server-livereload": "latest"
 	}
 }

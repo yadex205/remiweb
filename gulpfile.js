@@ -5,7 +5,8 @@ var gulp = require("gulp"),
 	plumber = require("gulp-plumber"),
 	notify = require("gulp-notify"),
 	server = require("gulp-server-livereload"),
-	exec = require("gulp-exec");
+	runSequence = require("run-sequence"),
+	exec = require("child_process").exec;
 
 // Filepath
 var ejs_compile_files = ["./ejs/**/*.ejs", '!' + "./ejs/**/_*.ejs"],
@@ -15,37 +16,49 @@ var ejs_compile_files = ["./ejs/**/*.ejs", '!' + "./ejs/**/_*.ejs"],
 	markdown_files = "./markdown/**/*.md",
 	image_files = "./image/**/*.{png,jpg,svg}";
 
+var exec_callback = function (err, stdout, stderr) {
+	console.log(stdout);
+	console.log(stderr);
+
+	if (err) {
+		notify.onError("<%= err %>");
+	}
+}
+
 gulp.task("default", ["build"]);
 gulp.task("init", function () {
-	gulp.src(".")
-		.pipe(exec("bundle install --path vendor/bundle"))
-		.pipe(exec.reporter());
+	exec("bundle install --path vendor/bundle", exec_callback);
 	gulp.src("./node_modules/font-awesome/css/font-awesome.min.css")
 		.pipe(gulp.dest("./jekyll_sources/css"));
 	gulp.src("./node_modules/font-awesome/fonts/*")
 		.pipe(gulp.dest("./jekyll_sources/fonts"));
 });
-gulp.task("build", ["markdown", "ejs", "sass", "image", "jekyll"]);
-gulp.task("test", ["build"], function () {
-	gulp.watch(ejs_watch_files, ["ejs"]);
-	gulp.watch(sass_files, ["sass"]);
-	gulp.watch(jekyll_source_files,["jekyll"]);
-	gulp.src("./_site")
-		.pipe(server({
+gulp.task("build", function () {
+	runSequence("generate_sources", "jekyll");
+});
+gulp.task("test", function () {
+	runSequence("generate_sources", "jekyll", function () {
+		console.log("Starting jekyll watch.");
+		exec("bundle exec jekyll build --watch", exec_callback);
+		gulp.watch(ejs_watch_files, ["ejs"]);
+		gulp.watch(sass_files, ["sass"]);
+		gulp.watch(markdown_files, ["markdown"]);
+		gulp.watch(image_files, ["image"]);
+		gulp.src("./htdocs")
+			.pipe(server({
 			livereload: true,
 			port: 8080,
 			host: "0.0.0.0"
 		}));
+	});
 });
 
 gulp.task("jekyll", function () {
-	gulp.src(".")
-		.pipe(plumber({
-			errorHandler: notify.onError("Error: <%= error.message %>")
-		}))
-		.pipe(exec("bundle exec jekyll build"))
-		.pipe(exec.reporter());
+	exec("bundle exec jekyll build", exec_callback);
 });
+
+
+gulp.task("generate_sources", ["ejs", "markdown", "sass", "image"]);
 gulp.task("markdown", function () {
 	gulp.src(markdown_files)
 		.pipe(gulp.dest("./jekyll_sources"));
@@ -62,11 +75,11 @@ gulp.task("ejs", function () {
 gulp.task("sass", function () {
 	gulp.src(sass_files)
 		.pipe(plumber({
-			errorHandler: notify.onError("Error: <%= error.message %>")
-		}))
+		errorHandler: notify.onError("Error: <%= error.message %>")
+	}))
 		.pipe(compass({
-			config_file: "config.rb",
-			sass: "sass",
-			css: "jekyll_sources/css"
-		}));
+		config_file: "config.rb",
+		sass: "sass",
+		css: "jekyll_sources/css"
+	}));
 });
