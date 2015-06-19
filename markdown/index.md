@@ -2,6 +2,7 @@
 layout: default
 extracss: /css/pages/index.css
 ---
+{% capture nowunix %}{{ site.time | date: "%s" }}{% endcapture %}
 <div class="top-picture"
 	style="
 		background-image: url('image/index-large/00.jpg');
@@ -45,6 +46,8 @@ extracss: /css/pages/index.css
 		<header>Live schedule</header>
 		{% assign start = site.categories.live | size | minus:3 %}
 		{% for post in site.categories.live reversed offset:start %}
+		{% capture publishtime %}{{post.date | date: "%s"}}{% endcapture %}
+		{% if publishtime >= nowunix %}
 		<div class="post-thumb">
 			<div class="date">
 				{{ post.date | date: '%Y.%m.%d' }}
@@ -54,6 +57,7 @@ extracss: /css/pages/index.css
 					<i class="fa fa-arrow-circle-right fa-lg"></i></a>
 			</div>
 		</div>
+		{% endif %}
 		{% endfor %}
 	</section>
 	<section class="twitter">
