@@ -1,0 +1,32 @@
+// _footer.scss
+
+footer {
+	font-family: "Questrial";
+	color: #d55;
+	background-color: lightpink;
+	padding: 40px;
+	margin-top: 40px;
+	
+	section {
+		position: relative;
+		width: 100%;
+		max-width: 980px;
+		margin: 0 auto;
+		
+		a.button-backtotop {
+			display: block;
+			position: absolute;
+			top: -60px; right: 0;
+			width: 120px;
+			line-height: 50px;
+			text-decoration: none;
+			text-align: center;
+			color: white;
+			background-color: #d55;
+			
+			i.fa {
+				vertical-align: middle;
+			}
+		}
+	}
+}
