@@ -18,6 +18,9 @@
 						{{ page.title }}
 					</div>
 					<div class="content">
+						{% if page.category == "live" %}
+						place: {{page.place}}
+						{% endif %}
 						{{ content }}
 					</div>
 					<div class="share-post">

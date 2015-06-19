@@ -45,7 +45,8 @@ extracss: /css/pages/index.css
 	<section class="live">
 		<header>Live schedule</header>
 		{% assign start = site.categories.live | size | minus:3 %}
-		{% for post in site.categories.live reversed offset:start %}
+		{% assign counter = 0 %}
+		{% for post in site.categories.live reversed %}
 		{% capture publishtime %}{{post.date | date: "%s"}}{% endcapture %}
 		{% if publishtime >= nowunix %}
 		<div class="post-thumb">

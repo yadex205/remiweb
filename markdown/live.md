@@ -56,4 +56,4 @@ extracss: /css/pages/live.css
 	</div>
 </div>
 
-<a href="{{page.url | ptr}}/live/archive/">過去のライブ(準備中)</a>
+<a href="{{page.url | ptr}}/live/archive/">過去のライブはこちら</a>
