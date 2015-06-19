@@ -25,7 +25,7 @@ var exec_callback = function (err, stdout, stderr) {
 	if (err) {
 		notify.onError("Error! <%= err %>");
 	}
-}
+};
 
 gulp.task("default", ["build"]);
 gulp.task("init", function () {
