@@ -1,6 +1,5 @@
 # compass, css
 .sass-cache/
-stylesheets/
 css/
 *.scssc
 *.css
@@ -17,3 +16,6 @@ htdocs/
 # nodejs
 node_modules/
 *.log
+
+# bower
+src/vendor/

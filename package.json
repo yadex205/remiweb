@@ -6,10 +6,6 @@
 	"scripts": {
 		"postinstall": "gulp init"
 	},
-	"dependencies": {
-		"font-awesome": "4.3.0",
-		"smooth-scroll": "cferdinandi/smooth-scroll"
-	},
 	"devDependencies": {
 	  "gulp": "^3.9.0",
 	  "gulp-exec": "^2.1.1",
