@@ -1,0 +1,10 @@
+{
+  "name": "yadex205-web",
+  "version": "0.0.1",
+  "description": "Website of Yadex205",
+  "private": true,
+  "dependencies": {
+    "font-awesome": "~4.3.0",
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git"
+  }
+}

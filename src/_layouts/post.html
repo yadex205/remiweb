@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<% include common/_meta %>
+	{% include _meta.html %}
 	<link rel="stylesheet" href="{{ page.url | ptr }}/css/pages/news.css">
 </head>
 <body>
-	<% include common/_header %>
+	{% include _header.html %}
 	<section class="main-content-outer">
 		<header class="page-title">{{ page.category }}</header>
 		<section class="main-content">
@@ -36,6 +36,6 @@
 			</article>
 		</section>
 	</section>
-	<% include common/_footer %>
+	{% include _footer.html %}
 </body>
 </html>

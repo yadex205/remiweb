@@ -1,5 +1,5 @@
 {
-	"name": "re-mi-web",
+	"name": "remiweb",
 	"version": "0.0.1",
 	"license": "MIT",
 	"private": true,
@@ -11,13 +11,12 @@
 		"smooth-scroll": "cferdinandi/smooth-scroll"
 	},
 	"devDependencies": {
-		"gulp": "3.8.11",
-		"gulp-compass": "latest",
-		"gulp-plumber": "latest",
-		"gulp-notify": "latest",
-		"gulp-ejs": "latest",
-		"gulp-exec": "latest",
-		"run-sequence": "1.1.0",
-		"gulp-server-livereload": "latest"
+	  "gulp": "^3.9.0",
+	  "gulp-exec": "^2.1.1",
+	  "gulp-livereload": "^3.8.0",
+	  "gulp-notify": "^2.2.0",
+	  "gulp-plumber": "^1.0.1",
+	  "gulp-server-livereload": "^1.4.0",
+	  "gulp-webserver": "^0.9.1"
 	}
 }

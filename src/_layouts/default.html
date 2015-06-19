@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<% include common/_meta %>
+	{% include _meta.html %}
 </head>
 <body>
-	<% include common/_header %>
+	{% include _header.html %}
 	<section class="main-content-outer">
 		<header class="page-title">{{ page.displaytitle }}</header>
 		<section class="main-content">
 			{{ content }}
 		</section>
 	</section>
-	<% include common/_footer %>
+	{% include _footer.html %}
 </body>
 </html>
