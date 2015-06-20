@@ -28,20 +28,6 @@ extracss: /css/pages/index.css
 	</div>
 </div>
 <div class="bottom-contents">
-	<section class="news">
-		<header>News</header>
-		{% for post in site.categories.news limit:3 %}
-		<div class="post-thumb">
-			<div class="date">
-				{{ post.date | date: '%Y.%m.%d' }}
-			</div>
-			<div class="title">
-				<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}
-					<i class="fa fa-arrow-circle-right fa-lg"></i></a>
-			</div>
-		</div>
-		{% endfor %}
-	</section>
 	<section class="live">
 		<header>Live schedule</header>
 		{% assign start = site.categories.live | size | minus:3 %}
@@ -59,6 +45,20 @@ extracss: /css/pages/index.css
 			</div>
 		</div>
 		{% endif %}
+		{% endfor %}
+	</section>
+	<section class="news">
+		<header>News</header>
+		{% for post in site.categories.news limit:3 %}
+		<div class="post-thumb">
+			<div class="date">
+				{{ post.date | date: '%Y.%m.%d' }}
+			</div>
+			<div class="title">
+				<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}
+					<i class="fa fa-arrow-circle-right fa-lg"></i></a>
+			</div>
+		</div>
 		{% endfor %}
 	</section>
 	<section class="twitter">

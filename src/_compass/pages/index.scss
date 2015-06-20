@@ -84,3 +84,26 @@ section.main-content {
 		}
 	}
 }
+
+@media screen and (max-width: 800px) {
+	section.main-content {
+		div.top-picture {
+			div.update-info-picture {
+				display: none;
+			}
+			div.update-info-text {
+				width: 100%;
+				border-width: 18px 0 0 0;
+			}
+		}
+		div.bottom-contents {
+			display: block;
+			section {
+				display: block;
+				&.twitter > iframe {
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
