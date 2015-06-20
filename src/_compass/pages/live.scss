@@ -5,10 +5,17 @@ section.main-content {
 		display: table;
 		table-layout: fixed;
 		width: 100%;
-		
+		border-spacing: 12px;
 		div.live-list {
 			display: table-cell;
-			
+			header {
+				color: #d55;
+				font-size: 20px;
+				line-height: 40px;
+				font-weight: bolder;
+				border-bottom: 2px solid #d55;
+				margin-bottom: 12px;
+			}
 			article.live {
 				display: table;
 				margin: 24px 0;

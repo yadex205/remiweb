@@ -11,10 +11,6 @@ body {
 	font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Segoe UI", "Meiryo", "Questrial", sans-serif;
 }
 
-p {
-	margin: 12px 0;
-}
-
 a {
 	color: inherit;
 }
@@ -36,9 +32,53 @@ section.main-content-outer {
 	}
 }
 
+article.post-thumb, article.post {
+	display: table;
+	border-spacing: 0;
+	margin: 24px 0;
+	div.date {
+		display: table-cell;
+		color: #d55;
+		font-family: "Questrial";
+		font-size: 24px;
+		width: 130px;
+	}
+	div.text {
+		display: table-cell;
+		border-left: 2px solid #d55;
+		padding-left: 10px;
+		div.title {
+			font-weight: bolder;
+			a { text-decoration: none; }
+		}
+	}
+}
+article.post {
+	div.share-post {
+		margin-top: 40px;
+		&>* {
+			vertical-align: bottom;
+		}
+	}
+}
 
 @media screen and (max-width: 640px) {
 	body {
 		font-size: 14px;
+	}
+	article.post-thumb, article.post {
+		display: block;
+		border-left: 8px solid #d55;
+		box-sizing: border-box;
+		padding-left: 10px;
+		div.date {
+			display: block;
+			font-size: 20px;
+		}
+		div.text {
+			display: block;
+			padding: 0;
+			border: none;
+		}
 	}
 }

@@ -2,7 +2,6 @@
 layout: default
 title: News
 displaytitle: news
-extracss: /css/pages/news.css
 ---
 {% for post in site.categories.news %}
 <article class="post">
