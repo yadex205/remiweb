@@ -5,7 +5,7 @@ stylesheets/
 
 # ruby bundle
 .bundle/
-vendor/
+vendor/bundle/
 Gemfile.lock
 
 # jekyll
