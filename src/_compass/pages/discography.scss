@@ -10,3 +10,15 @@ article.disco {
 		}
 	}
 }
+
+@media screen and (max-width: 640px) {
+	article.disco {
+		text-align: center;
+		display: block;
+		section {
+			display: block;
+			border: 0px solid transparent;
+		}
+		margin: 40px 0;
+	}
+}

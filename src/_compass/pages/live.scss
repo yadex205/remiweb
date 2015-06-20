@@ -43,3 +43,23 @@ section.main-content {
 		}
 	}
 }
+
+@media screen and (max-width: 800px) {
+	section.main-content {
+		div.live-list-outer {
+			display: block;
+			div.live-list {
+				display: block;
+				article.live {
+					display: block;
+					div.date {
+						display: block;
+					}
+					div.text {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

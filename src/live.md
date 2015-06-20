@@ -7,7 +7,7 @@ extracss: /css/pages/live.css
 {% capture nowunix %}{{ site.time | date: "%s" }}{% endcapture %}
 <div class="live-list-outer">
 	<div class="live-list">
-		<h5>れーみ&#x2606; ライブ</h5>
+		<h4>れーみ&#x2606; ライブ</h4>
 		{% for post in site.categories.live reversed %}
 		{% if post.tags contains "self" %}
 		{% capture publishtime %}{{post.date | date: "%s"}}{% endcapture %}
@@ -31,7 +31,7 @@ extracss: /css/pages/live.css
 		{% endfor %}
 	</div>
 	<div class="live-list">
-		<h5>サポートライブ</h5>
+		<h4>サポートライブ</h4>
 		{% for post in site.categories.live reversed %}
 		{% if post.tags contains "support" %}
 		{% capture publishtime %}{{post.date | date: "%s"}}{% endcapture %}
