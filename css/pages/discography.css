@@ -1,1 +1,1 @@
-article.disco{display:table;border-collapse:collapse}article.disco section{display:table-cell;vertical-align:top;border:20px solid transparent}article.disco section img.jacket{width:240px}
+article.disco{display:table;border-collapse:collapse}article.disco section{display:table-cell;vertical-align:top;border:20px solid transparent}article.disco section img.jacket{width:240px}@media screen and (max-width: 640px){article.disco{text-align:center;display:block;margin:40px 0}article.disco section{display:block;border:0px solid transparent}}
