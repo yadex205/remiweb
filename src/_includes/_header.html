@@ -38,4 +38,43 @@
 			{% endif %}
 			>contact</a>
 	</div>
+	
+	<input type="checkbox" id="sp-menu-trigger">
+	<div class="sp-menu">
+		<label for="sp-menu-trigger">
+			<i class="fa fa-list fa-lg"></i><br />
+		</label><br />
+		<a href="{{ page.url | ptr }}/"
+			{% if page.name contains "index" %}
+			class="current"
+			{% endif %}
+			>top</a><br />
+		<a href="{{ page.url | ptr }}/news/"
+			{% if page.name contains "news" %}
+			class="current"
+			{% endif %}
+			>news</a><br />
+		<a href="{{ page.url | ptr }}/live"
+			{% if page.name contains "live" %}
+			class="current"
+			{% endif %}
+			>live</a><br />
+		<a href="{{ page.url | ptr }}/discography"
+			{% if page.name contains "discography" %}
+			class="current"
+			{% endif %}
+			>discography</a><br />
+		<a href="{{ page.url | ptr }}/biography"
+			{% if page.name contains "biography" %}
+			class="current"
+			{% endif %}
+			>biography</a><br />
+		<a href="http://ameblo.jp/remiriya27/"
+			target="_blank">blog <i class="fa fa-external-link-square"></i></a><br />
+		<a href="{{ page.url | ptr }}/contact"
+			{% if page.name contains "contact" %}
+			class="current"
+			{% endif %}
+			>contact</a>
+	</div>
 </header>
