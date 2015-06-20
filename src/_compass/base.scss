@@ -1,14 +1,14 @@
 // base.scss
 
-@import "compass/reset";
+@import "compass";
 @import "header";
 @import "footer";
 
 body {
+	
+	@include reset-box-model;
 	color: #444;
-	//background-image: url("../image/background.jpg");
 	font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", "Segoe UI", "Meiryo", "Questrial", sans-serif;
-	min-width: 800px; // debug!
 }
 
 p {
@@ -36,25 +36,9 @@ section.main-content-outer {
 	}
 }
 
-// markdown
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: bolder;
-	margin: 20px 0; 
-}
-h1 { font-size: 36px; }
-h2 { font-size: 32px; }
-h3 { font-size: 28px; }
-h4 { font-size: 24px; }
-h5 { font-size: 20px; }
-h6 { font-size: 16px; }
-
-p {
-	margin: 20px 0;
-	line-height: 140%;
-}
-
-code {
-	display: block;
-	margin: 6px 0;
+@media screen and (max-width: 640px) {
+	body {
+		font-size: 14px;
+	}
 }

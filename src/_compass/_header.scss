@@ -76,3 +76,34 @@ header.main-header {
 		}
 	}
 }
+
+@media screen and (max-width: 800px) {
+	header.main-header {
+		div.menu {
+			a {
+				font-size: 16px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 600px) {
+	header.main-header {
+		padding: 0 20px;
+		div.title {
+			padding: 20px 0;
+			img {
+				height: 30px;
+				display: block;
+			}
+			span.subtitle {
+				display: block;
+				font-size: 16px;
+				margin: 0;
+				margin-top: 12px;
+			}
+		}
+		div.menu {
+			display: none;
+		}
+	}
+}
