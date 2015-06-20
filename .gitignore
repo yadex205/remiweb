@@ -16,3 +16,4 @@ htdocs/
 node_modules/
 *.log
 
+src/
