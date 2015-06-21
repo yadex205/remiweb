@@ -1,0 +1,17 @@
+<article class="post-thumb">
+	<div class="date">
+		{{ post.date | date: '%Y.%m.%d' }}
+	</div>
+	<div class="text">
+		<div class="title">
+			<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }} <i class="fa fa-arrow-circle-right fa-lg"></i></a>
+		</div>
+		<div class="content">
+			{% if post.category == "live" %}
+				@{{post.place}}
+			{% elsif post.category == "news" %}
+				{{ post.content }}
+			{% endif %}
+		</div>
+	</div>
+</article>
