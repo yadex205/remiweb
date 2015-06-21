@@ -3,7 +3,7 @@ layout: default
 extracss: /css/pages/index.css
 ---
 {% capture nowunix %}{{ site.time | date: "%s" }}{% endcapture %}
-<div class="top-picture"
+<div class="top-picture" 
 	style="
 		background-image: url('image/index-large/00.jpg');
 		background-size: cover;
@@ -40,8 +40,7 @@ extracss: /css/pages/index.css
 				{{ post.date | date: '%Y.%m.%d' }}
 			</div>
 			<div class="title">
-				<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}
-					<i class="fa fa-arrow-circle-right fa-lg"></i></a>
+				<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }} <i class="fa fa-arrow-circle-right fa-lg"></i></a>
 			</div>
 		</div>
 		{% endif %}
@@ -55,8 +54,7 @@ extracss: /css/pages/index.css
 				{{ post.date | date: '%Y.%m.%d' }}
 			</div>
 			<div class="title">
-				<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}
-					<i class="fa fa-arrow-circle-right fa-lg"></i></a>
+				<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }} <i class="fa fa-arrow-circle-right fa-lg"></i></a>
 			</div>
 		</div>
 		{% endfor %}

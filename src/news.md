@@ -10,8 +10,7 @@ displaytitle: news
 	</div>
 	<div class="text">
 		<div class="title">
-			<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}</a>
-				<i class="fa fa-arrow-circle-right fa-lg"></i></a>
+			<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}</a> <i class="fa fa-arrow-circle-right fa-lg"></i></a>
 		</div>
 		<div class="content">
 			{{ post.content }}

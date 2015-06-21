@@ -18,8 +18,7 @@ extracss: /css/pages/live.css
 			</div>
 			<div class="text">
 				<div class="title">
-					<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}
-						<i class="fa fa-arrow-circle-right fa-lg"></i></a>
+					<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }} <i class="fa fa-arrow-circle-right fa-lg"></i></a>
 				</div>
 				<div class="content">
 					@{{post.place}}
@@ -42,8 +41,7 @@ extracss: /css/pages/live.css
 			</div>
 			<div class="text">
 				<div class="title">
-					<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }}
-						<i class="fa fa-arrow-circle-right fa-lg"></i></a>
+					<a href="{{ page.url | ptr }}{{ post.url }}">{{ post.title }} <i class="fa fa-arrow-circle-right fa-lg"></i></a>
 				</div>
 				<div class="content">
 					@{{post.place}}
