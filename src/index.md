@@ -20,7 +20,7 @@ extracss: /css/pages/index.css
 	<div class="update-info-text">
 		{% assign post = site.categories.news[0] %}
 		<div class="date">
-			2015.07.21
+			2015.08.03
 		</div>
 		<div class="text">
 			ライブ情報を更新しました!
