@@ -2,7 +2,7 @@
 title: ぼくらのアニソンサマーウォーズ
 category: live
 place: 大久保HOTSHOT
-tags: band solo
+tags: support key
 layout: post
 ---
 
