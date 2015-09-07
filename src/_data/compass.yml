@@ -1,7 +1,7 @@
 ---
 require:
 - jekyll-compass
-project_path: C:/Users/Canon/git/yadex205web/.
+project_path: C:/Users/Canon/git/remiweb/.
 http_path: "/"
 css_dir: css
 sass_dir: _compass
